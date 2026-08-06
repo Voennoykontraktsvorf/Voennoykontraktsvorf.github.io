@@ -1,0 +1,240 @@
+/* Design tokens — same palette as воен-контракт-сво.рф */
+:root {
+  --primary: #102B45;
+  --primary-ink: #ffffff;
+  --page-bg: #f1f3f6;
+  --surface: #ffffff;
+  --surface-2: #e9edf3;
+  --line: #cfd6e0;
+  --ink: #07111F;
+  --muted: #4f5b6e;
+  --footer-bg: #0B1B2E;
+  --footer-ink: #ffffff;
+  --footer-muted: #9CA8B8;
+  --font-heading: 'Manrope', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'JetBrains Mono', SFMono-Regular, Menlo, monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: var(--page-bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+.eyebrow, .eyebrow-light {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.eyebrow-light { color: var(--footer-muted); }
+
+h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; }
+h1 {
+  font-size: clamp(30px, 5vw, 54px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+h1 .accent { color: var(--primary); font-weight: 500; }
+h2 {
+  font-size: clamp(24px, 3.5vw, 40px);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+h3 {
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.lead, .sub {
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 700px;
+}
+.sub { margin-bottom: 40px; }
+.lead { margin-bottom: 32px; font-size: 18px; }
+
+/* HERO */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 60px 0 40px;
+  background: var(--surface-2);
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  opacity: 0.10;
+  pointer-events: none;
+}
+.hero-bg svg { width: 100%; height: 100%; display: block; }
+.hero-inner { position: relative; z-index: 1; }
+.hero-photo {
+  display: block;
+  width: 100%;
+  max-width: 1160px;
+  height: auto;
+  margin-top: 40px;
+  border: 1px solid var(--line);
+  object-fit: cover;
+  aspect-ratio: 16/9;
+}
+
+/* CTA */
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 8px; }
+.btn {
+  display: inline-block;
+  padding: 14px 24px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  border: 1px solid var(--primary);
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+.btn:hover { opacity: 0.85; }
+.btn-primary { background: var(--primary); color: var(--primary-ink); }
+.btn-ghost { background: transparent; color: var(--primary); }
+.btn-wide { display: block; text-align: center; margin-top: 30px; max-width: 400px; margin-left: auto; margin-right: auto; }
+
+/* REGIONS */
+.regions { padding: 80px 0; background: var(--surface); }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+.card {
+  display: flex; flex-direction: column;
+  padding: 24px 22px;
+  background: var(--surface);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  min-height: 140px;
+  transition: background 0.2s;
+}
+.card:hover { background: var(--surface-2); }
+.card-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+.card h3 { font-size: 18px; margin-bottom: 12px; letter-spacing: -0.01em; }
+.card-sum {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--primary);
+  margin-top: auto;
+}
+
+/* HOW */
+.how { padding: 80px 0; background: var(--surface-2); }
+.steps {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+.steps li {
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+.steps .num {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--primary);
+  margin-bottom: 14px;
+}
+.steps b {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 18px;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+/* FAQ */
+.faq { padding: 80px 0; background: var(--surface); }
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 30px;
+}
+.faq-item {
+  padding: 24px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.faq-item h3 { margin-bottom: 10px; font-size: 18px; }
+.faq-item p { color: var(--muted); font-size: 15px; line-height: 1.55; }
+
+/* FOOTER */
+.footer { background: var(--footer-bg); color: var(--footer-ink); padding: 60px 0 30px; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+.footer-link {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 22px;
+  color: var(--footer-ink);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+.footer-note { color: var(--footer-muted); font-size: 13px; }
+.footer-list { list-style: none; }
+.footer-list li { padding: 6px 0; }
+.footer-list a {
+  color: var(--footer-ink);
+  font-size: 15px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.footer-list a:hover { border-bottom-color: var(--footer-muted); }
+.footer-copy {
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #1B3D5A;
+  color: var(--footer-muted);
+  font-size: 13px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: repeat(2, 1fr); }
+  .faq-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+}
+@media (max-width: 500px) {
+  .grid { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; }
+  .hero { padding: 40px 0 30px; }
+  .regions, .how, .faq { padding: 50px 0; }
+}
